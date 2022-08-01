@@ -1,11 +1,20 @@
-export const getAllMatchups = () => {
-  return fetch('/api/matchup', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
-};
+import { gql } from "@apollo/client";
+
+
+
+
+
+export const GET_ALL_MATCHUPS = gql`
+query GET_MATCHUP_LIST {
+  getMatchupList {
+    _id
+    tech1
+    tech2
+  }
+}
+`;
+
+
 
 export const createMatchup = (matchupData) => {
   return fetch('/api/matchup', {
